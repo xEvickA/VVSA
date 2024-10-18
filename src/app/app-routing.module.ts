@@ -8,16 +8,16 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: '**',
-    component: DashboardComponent
-  },
-  {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: 'basicAccounts',
     loadChildren: () => import('./basic-accounts/basic-accounts.module').then(m => m.BasicAccountsModule)
+  },
+  {
+    path: '**',
+    component: DashboardComponent
   },
 ];
 
