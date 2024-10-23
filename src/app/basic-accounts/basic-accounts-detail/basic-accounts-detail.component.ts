@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ITransaction, TransactionsService } from 'src/app/api/transactions.service';
 
 @Component({
@@ -7,14 +8,15 @@ import { ITransaction, TransactionsService } from 'src/app/api/transactions.serv
   styleUrls: ['./basic-accounts-detail.component.css']
 })
 export class BasicAccountsDetailComponent implements OnInit{
+  // transactionData: ITransaction
   transactionData: ITransaction;
 
-  constructor(transactionService: TransactionsService){}
+  constructor(private transactionService: TransactionsService, private router: Router){}
 
-  ngOnInit(id: number): void {
+  async ngOnInit() {
+    var id = this.router.url.slice(this.router.url.lastIndexOf('/') + 1)
     this.transactionService.getTransactionDetail$(id).subscribe((response) => {
-      
+      this.transactionData = response.data;
     });
   }
-
 }

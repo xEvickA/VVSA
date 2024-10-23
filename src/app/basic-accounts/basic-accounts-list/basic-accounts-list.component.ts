@@ -8,17 +8,13 @@ import { TransactionsService } from 'src/app/api/transactions.service';
   styleUrls: ['./basic-accounts-list.component.css']
 })
 export class BasicAccountsListComponent implements OnInit{
-  // transactionsService!: TransactionsService;
   transactions: ITransaction[] = [];
 
   constructor(private transactionsService: TransactionsService) {}
 
   ngOnInit(): void {
     this.transactionsService.getTransactions$().subscribe((response) => {
-      console.log(response);
       this.transactions = response.data;
-
     });
-    console.log(this.transactions)
   }
 }

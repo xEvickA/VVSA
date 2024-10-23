@@ -1,4 +1,8 @@
-<p>basic-accounts-detail works!</p>
-<div *ngIf="transactionData">
-    <!-- div and content will be rendered only if condition is met -->
+<div *ngIf="transactionData" style="display: flex; flex-direction: column;">
+  <a>{{"Full Name:"}} {{transactionData.fullName}}</a>
+  <a>{{"Transaction Type:"}} {{transactionData.transactionType}}</a>
+  <a>{{"Account Number:"}} {{transactionData.accountNumber}}</a>
+  <a>{{"Bank Code:"}} {{transactionData.bankCode}}</a>
+  <a>{{"Issue Date:"}} {{transactionData.issueDate}}</a>
+  <a>{{"Amount:"}} {{transactionData.amount}}</a>
 </div>
