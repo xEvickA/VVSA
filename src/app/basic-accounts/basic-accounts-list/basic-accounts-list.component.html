@@ -1,1 +1,5 @@
 <p>basic-accounts-list works!</p>
+<div *ngFor="let item of transactions">
+    {{item.transactionType | transactionType }}
+    
+</div>

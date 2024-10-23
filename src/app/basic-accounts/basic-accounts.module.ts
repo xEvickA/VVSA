@@ -6,6 +6,7 @@ import { BasicAccountsListComponent } from './basic-accounts-list/basic-accounts
 import { BasicAccountsDetailComponent } from './basic-accounts-detail/basic-accounts-detail.component';
 import { WithdrawalDetailComponent } from './basic-accounts-detail/withdrawal-detail/withdrawal-detail.component';
 import { BasicDetailComponent } from './basic-accounts-detail/basic-detail/basic-detail.component';
+import { UtilsModule } from '../utils/utils/utils.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BasicDetailComponent } from './basic-accounts-detail/basic-detail/basic
   ],
   imports: [
     CommonModule,
-    BasicAccountsRoutingModule
+    BasicAccountsRoutingModule,
+    UtilsModule
   ]
 })
 export class BasicAccountsModule { }
