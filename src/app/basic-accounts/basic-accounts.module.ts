@@ -8,6 +8,8 @@ import { WithdrawalDetailComponent } from './basic-accounts-detail/withdrawal-de
 import { BasicDetailComponent } from './basic-accounts-detail/basic-detail/basic-detail.component';
 import { UtilsModule } from '../utils/utils/utils.module';
 
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { UtilsModule } from '../utils/utils/utils.module';
   imports: [
     CommonModule,
     BasicAccountsRoutingModule,
-    UtilsModule
+    UtilsModule,
+    MatTableModule
   ]
 })
 export class BasicAccountsModule { }

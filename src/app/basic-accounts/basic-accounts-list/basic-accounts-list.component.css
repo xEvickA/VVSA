@@ -1,0 +1,13 @@
+.text {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table {
+    padding: 0 5%;
+}
+
+.table-header {
+    background-color: #edf7e3;
+}
