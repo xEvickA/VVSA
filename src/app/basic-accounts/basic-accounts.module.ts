@@ -8,13 +8,13 @@ import { WithdrawalDetailComponent } from './basic-accounts-detail/withdrawal-de
 import { BasicDetailComponent } from './basic-accounts-detail/basic-detail/basic-detail.component';
 import { UtilsModule } from '../utils/utils/utils.module';
 
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 
 

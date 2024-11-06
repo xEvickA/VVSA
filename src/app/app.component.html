@@ -3,9 +3,13 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item class="button-spacing" [routerLink]="['/basicAccounts']">Transactions</button>
+    <button mat-menu-item class="button-spacing" [routerLink]="['/basicAccounts']">
+      <mat-icon>dialpad</mat-icon>
+      <span>Transactions </span>
+    </button>
   </mat-menu>
-  <span [routerLink]="['/']">Internet Banking</span>
+  <mat-icon aria-hidden="false" aria-label="Example home icon" [routerLink]="['/']"  style="margin-right: 1rem;">home</mat-icon>
+  <span [routerLink]="['/']"> Internet Banking</span>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

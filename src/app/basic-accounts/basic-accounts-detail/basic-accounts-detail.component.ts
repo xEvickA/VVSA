@@ -9,7 +9,6 @@ import { ITransaction, TransactionsService } from 'src/app/api/transactions.serv
   styleUrls: ['./basic-accounts-detail.component.css']
 })
 export class BasicAccountsDetailComponent implements OnInit{
-  // transactionData: ITransaction
   transactionData: ITransaction;
 
   constructor(private transactionService: TransactionsService, private router: Router){}
