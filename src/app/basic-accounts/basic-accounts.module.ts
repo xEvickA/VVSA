@@ -9,6 +9,13 @@ import { BasicDetailComponent } from './basic-accounts-detail/basic-detail/basic
 import { UtilsModule } from '../utils/utils/utils.module';
 
 import {MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +29,14 @@ import {MatTableModule} from '@angular/material/table';
     CommonModule,
     BasicAccountsRoutingModule,
     UtilsModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule,
   ]
 })
 export class BasicAccountsModule { }

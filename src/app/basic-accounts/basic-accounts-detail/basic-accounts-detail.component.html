@@ -1,9 +1,21 @@
 <p class="text">basic-accounts-detail works!</p>
 <div *ngIf="transactionData" style="display: flex; flex-direction: column;">
-  <a>{{"Full Name:"}} {{transactionData.fullName}}</a>
-  <a>{{"Transaction Type:"}} {{transactionData.transactionType}}</a>
-  <a>{{"Account Number:"}} {{transactionData.accountNumber}}</a>
-  <a>{{"Bank Code:"}} {{transactionData.bankCode}}</a>
-  <a>{{"Issue Date:"}} {{transactionData.issueDate}}</a>
-  <a>{{"Amount:"}} {{transactionData.amount}}</a>
+  <form [formGroup]="detailForm" style="display: flex; flex-direction: column; gap: 16px; margin-left: 2rem;">
+    <mat-form-field>
+      <mat-label>Account Number</mat-label>
+      <input matInput [value]="transactionData.accountNumber" formControlName="accountNumber">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput [value]="transactionData.amount" formControlName="amount">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Issue Date</mat-label>
+      <input matInput [matDatepicker]="picker" [value]="transactionData.issueDate" formControlName="issueDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
 </div>

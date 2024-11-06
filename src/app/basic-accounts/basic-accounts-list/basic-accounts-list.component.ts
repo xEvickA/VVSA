@@ -16,7 +16,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations'; 
   ],
 })
 export class BasicAccountsListComponent implements OnInit{
-  displayedColumns: string[] = ['partnerName', 'type', 'date', 'amount'];
+  displayedColumns: string[] = ['partnerName', 'type', 'date', 'amount', 'search'];
   transactions: ITransaction[] = [];
 
   constructor(private transactionsService: TransactionsService) {}
@@ -26,4 +26,10 @@ export class BasicAccountsListComponent implements OnInit{
       this.transactions = response.data;
     });
   }
+
+  onSearch(element: any): void {
+    // Implement your search logic here
+    console.log('Search button clicked for:', element);
+  }
+
 }
