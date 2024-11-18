@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ITransaction } from 'src/app/api/transactions.service';
 
 @Pipe({
   name: 'transactionType'
