@@ -1,45 +1,31 @@
-using web.Models;
+using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore;
+using web.DatabaseModel;
 
 namespace web.Repositories;
 public class TransactionRepository : ITransactionRepository
 {
-    private List<Transaction> transactions;
-
-    public TransactionRepository()
+    private readonly Whiyes5oContext context;
+    public TransactionRepository(Whiyes5oContext context)
     {
-        transactions = new List<Transaction>();
-        var transaction1 = new Transaction
-        {
-            TransactionId = 1,
-            FullName = "John Doe",
-            TransactionType = TransactionType.Incoming,
-            AccountNumber = "1234567890",
-            BankCode = "123",
-            IssueDate = DateTime.Now,
-            Amount = 1000
-        };
-        var transaction2 = new Transaction
-        {
-            TransactionId = 2,
-            FullName = "Jane Doe",
-            TransactionType = TransactionType.Outgoing,
-            AccountNumber = "0987654321",
-            BankCode = "456",
-            IssueDate = DateTime.Now,
-            Amount = 500
-        };
-
-        transactions.Add(transaction1);
-        transactions.Add(transaction2);
+        this.context = context;
     }
 
     public List<Transaction> GetTransactions()
     {
-        return transactions;
+        var result = this.context.Transactions
+            .Include(t => t.TransactionType)
+            .Include(t => t.User)
+            .ToList();
+        return result;
     }
 
     public Transaction GetTransactionById(int id)
     {
-        return transactions.FirstOrDefault(t => t.TransactionId == id);
+        var result = this.context.Transactions
+            .Include(t => t.TransactionType)
+            .Include(t => t.User)
+            .FirstOrDefault(t => t.Id == id);
+        return result;
     }
 }

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using web.Models;
+using web.DatabaseModel;
 using web.Services;
 using web.Repositories;
 
@@ -19,13 +19,13 @@ public class TransactionController : ControllerBase
     }
 
     [HttpGet(Name = "GetTransactions")]
-    public List<Transaction> GetTransactions()
+    public List<TransactionViewModel> GetTransactions()
     {
         return this._transactionService.GetTransactions();
     }
 
     [HttpGet("{id}", Name = "GetTransactionById")]
-    public Transaction GetTransactionById(int id)
+    public TransactionViewModel GetTransactionById(int id)
     {
         return this._transactionService.GetTransactionById(id);
     }

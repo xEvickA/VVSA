@@ -1,5 +1,4 @@
-using web.Models;
-
+using web.DatabaseModel;
 namespace web.Repositories;
 public interface ITransactionRepository 
 {

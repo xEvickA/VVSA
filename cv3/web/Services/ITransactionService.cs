@@ -1,8 +1,8 @@
-using web.Models;
+using web.DatabaseModel;
 
 namespace web.Services;
 public interface ITransactionService
 {
-    List<Transaction> GetTransactions();
-    Transaction GetTransactionById(int id);
+    List<TransactionViewModel> GetTransactions();
+    TransactionViewModel GetTransactionById(int id);
 }

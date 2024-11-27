@@ -1,4 +1,4 @@
-using web.Models;
+using web.DatabaseModel;
 using web.Repositories;
 
 namespace web.Services;
@@ -11,13 +11,40 @@ public class TransactionService : ITransactionService
         this._transactionRepository = transactionRepository;
     }
 
-    public List<Transaction> GetTransactions()
+    public List<TransactionViewModel> GetTransactions()
     {
-        return _transactionRepository.GetTransactions();
+        var transactions = _transactionRepository.GetTransactions();
+        var transactionViewModels = new List<TransactionViewModel>();
+        foreach (var transaction in transactions)
+        {
+            var transactionViewModel = new TransactionViewModel
+            {
+                TransactionId = transaction.Id,
+                FullName = transaction.User.Name,
+                TransactionType = transaction.TransactionType.Name,
+                AccountNumber = transaction.AccountNumber,
+                BankCode = transaction.BankCode,
+                IssueDate = transaction.IssueDate,
+                Amount = transaction.Amount
+            };
+            transactionViewModels.Add(transactionViewModel);
+        }
+        return transactionViewModels;
     }
 
-    public Transaction GetTransactionById(int id)
+    public TransactionViewModel GetTransactionById(int id)
     {
-        return _transactionRepository.GetTransactionById(id);
+        var transaction = _transactionRepository.GetTransactionById(id);
+        var transactionViewModel = new TransactionViewModel
+        {
+            TransactionId = transaction.Id,
+            FullName = transaction.User.Name,
+            TransactionType = transaction.TransactionType.Name,
+            AccountNumber = transaction.AccountNumber,
+            BankCode = transaction.BankCode,
+            IssueDate = transaction.IssueDate,
+            Amount = transaction.Amount
+        };
+        return transactionViewModel;
     }
 }

@@ -1,3 +1,4 @@
+using web.DatabaseModel;
 using web.Repositories;
 using web.Services;
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddDbContext<Whiyes5oContext>();
 
 var app = builder.Build();
 
